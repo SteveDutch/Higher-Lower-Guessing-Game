@@ -11,21 +11,53 @@ public class HigherLowerGuessingGame {
 		int theRandomNumber = random.nextInt(101);
 		boolean lost = true;
 		
-		pickANumber(); 
+		int i =1;
+		while (i <=5) {
+			int checkGuess =pickANumber();
+			if (checkGuess <1 || checkGuess >100) {
+				System.out.println("Your guess is not between 1 and 100, please try again");
+				checkGuess = pickANumber();
+				
+			}
+			i++;
+			
+			if (checkGuess < theRandomNumber) {
+				System.out.println("Please pick a higher number");
+			} else if (checkGuess > theRandomNumber) {
+				System.out.println("Please pick a lower number");
+			} else if (checkGuess == theRandomNumber) {
+				System.out.println("You win!");
+				i =6;
+				lost = false; 
+			
+			}
+		}
+		
+		if (lost == true) {
+			System.out.println("You lose!");
+			System.out.println("The number to guess was: " + theRandomNumber);
+			
+			
+		}
+		
 
 	}
 
-	private static int pickANumber() {
+	public static int pickANumber() {
 		System.out.println("Pick a number between 1 and 100");
 		Scanner scanner = new Scanner (System.in);
 		String input = scanner.nextLine();
 		int pickedNumber = Integer.parseInt(input);
-		if (pickedNumber <1 || pickedNumber >100) {
-			System.out.println("Your guess is not between 1 and 100, please try again");
-			pickANumber();
-			
-		}
+		// Das gehört zur Schleife
+		/*
+		 * if (pickedNumber <1 || pickedNumber >100) {
+		 * System.out.println("Your guess is not between 1 and 100, please try again");
+		 * pickANumber();
+		 * 
+		 * }
+		 */
 		return pickedNumber;
+		
 	}
 
 }
