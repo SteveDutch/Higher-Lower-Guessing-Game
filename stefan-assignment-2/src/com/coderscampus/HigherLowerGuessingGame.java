@@ -16,15 +16,17 @@ public class HigherLowerGuessingGame {
 			int checkGuess =pickANumber();
 			if (checkGuess <1 || checkGuess >100) {
 				System.out.println("Your guess is not between 1 and 100, please try again");
-				checkGuess = pickANumber();
+				// checkGuess = pickANumber();
 				
 			}
-			i++;
+		
 			
-			if (checkGuess < theRandomNumber) {
+			else if (checkGuess < theRandomNumber) {
 				System.out.println("Please pick a higher number");
+				i++;
 			} else if (checkGuess > theRandomNumber) {
 				System.out.println("Please pick a lower number");
+				i++;
 			} else if (checkGuess == theRandomNumber) {
 				System.out.println("You win!");
 				i =6;
