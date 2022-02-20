@@ -15,20 +15,20 @@ public class HigherLowerGuessingGame {
 		while (i <=5) {
 			int checkGuess =pickANumber();
 			if (checkGuess <1 || checkGuess >100) {
-				System.out.println("Your guess is not between 1 and 100, please try again");
+				System.out.println("\nYour guess is not between 1 and 100, please try again");
 				// checkGuess = pickANumber();
 				
 			}
 		
 			
 			else if (checkGuess < theRandomNumber) {
-				System.out.println("Please pick a higher number");
+				System.out.println("\nPlease pick a higher number");
 				i++;
 			} else if (checkGuess > theRandomNumber) {
-				System.out.println("Please pick a lower number");
+				System.out.println("\nPlease pick a lower number");
 				i++;
 			} else if (checkGuess == theRandomNumber) {
-				System.out.println("You win!");
+				System.out.println("\nYou win!");
 				i =6;
 				lost = false; 
 			
@@ -36,8 +36,8 @@ public class HigherLowerGuessingGame {
 		}
 		
 		if (lost == true) {
-			System.out.println("You lose!");
-			System.out.println("The number to guess was: " + theRandomNumber);
+			System.out.println("\nYou lose!");
+			System.out.println("\nThe number to guess was: " + theRandomNumber);
 			
 			
 		}
@@ -46,7 +46,7 @@ public class HigherLowerGuessingGame {
 	}
 
 	public static int pickANumber() {
-		System.out.println("Pick a number between 1 and 100");
+		System.out.print("\nPick a number between 1 and 100 ");
 		Scanner scanner = new Scanner (System.in);
 		String input = scanner.nextLine();
 		int pickedNumber = Integer.parseInt(input);
